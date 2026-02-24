@@ -60,11 +60,11 @@ Both streams → MedGemma 27B (context-aware synthesis with EHR)
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │  Browser / Streamlit UI  (app.py)                               │
-│  ┌──────────┐ ┌───────────┐ ┌───────────┐ ┌────────────────┐  │
-│  │ 🎙️ Ear   │ │ 🔬 Eye    │ │ 🧠 Brain  │ │ 📤 Output      │  │
-│  │ voice.py │ │ imaging.py│ │ clinical  │ │ output.py      │  │
-│  └──────────┘ └───────────┘ │ .py       │ │ offline.py     │  │
-│                             └───────────┘ └────────────────┘  │
+│  ┌──────────┐ ┌───────────┐ ┌───────────┐ ┌────────────────┐    │
+│  │ 🎙️ Ear   │ │ 🔬 Eye   │ │ 🧠 Brain  │ │ 📤 Output      │    │
+│  │ voice.py │ │ imaging.py│ │ clinical  │ │ output.py      │    │
+│  └──────────┘ └───────────┘ │ .py       │ │ offline.py     │    │
+│                             └───────────┘ └────────────────┘    │
 └─────────────────────────────────────────────────────────────────┘
          │                │                │
     MedASR API      MedSigLIP         MedGemma API
@@ -137,7 +137,9 @@ For a cloud demo (no local GPU required), only the `GEMINI_API_KEY` is needed; M
 - **Target users:** Radiologists, hospitalists, primary care physicians, rural clinics, telemedicine providers.
 - **Immediate impact:** Eliminates ~2h/day of documentation per physician → estimated **$80K–$120K annual value per physician** (physician time cost at median US salary).
 - **Population scale:** If deployed to 10,000 physicians (0.7% of US physicians), MedEcho would free ~20M hours of physician time per year.
-- **Equity impact:** Offline mode enables use in low-resource settings (sub-Saharan Africa, rural India) where stable internet is unavailable but mobile devices are common.
+- **Equity impact:** Offline deployment makes the system usable in low resource regions where internet access is limited but mobile devices are common, allowing even lightweight AI to improve clinical workflow efficiency.
+- **High doctor to patient ratio environments:** In countries with critically high doctor to patient ratios, consultations are often rushed and documentation takes up much of the limited time available. By minimizing paperwork, doctors can concentrate on examination, clinical reasoning, and treatment decisions, allowing for more meaningful patient attention even in overcrowded settings.
+- **Digital history for underserved populations:** In many developing countries digital records are rare and paper prescriptions are easily lost. The system generates a structured AI assisted report for each visit, building a continuous patient history that improves follow up care and reduces repeated questioning.
 - **Safety:** PII redaction and encrypted export protect patient data in HIPAA-sensitive environments. All AI outputs are clearly labelled as decision _support_ (not diagnosis), with confidence scores shown.
 
 ---
